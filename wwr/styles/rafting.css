@@ -13,6 +13,11 @@ p {
 .sociallinks a {
     text-decoration: none;
 }
+.sociallinks img {
+    width: 30px;
+    height: auto;
+    margin-right: 10px;
+}
 .hero img {
     display: block;
     width: 100%;
