@@ -7,6 +7,15 @@
 h1, h2, h3, h4, h5, h6 {
     color: var(--primary-color);
 }
+main {
+    padding: 20px;
+    /* Change to a grid layout */
+    display: grid;
+    /* Define the number and width of columns */
+    grid-template-columns: 1fr 1fr; /* Example: Two equal columns */
+    /* Add a gap between the grid items */
+    grid-gap: 20px;
+}
 p {
     color: var(--secondary-color);
 }
@@ -25,22 +34,23 @@ p {
 }
 .hero {
     position: relative;
+    grid-column: 1 / -1;
 }
 .hero h1 {
     position: absolute; 
     top: 20px; 
     left: 40%; 
     color: white; 
-    
+    font: 600;  
 }
 
 .hero article {
     position: absolute; 
     bottom: 20px; 
-    left: 100px; 
+    left: 150px; 
     background-color:rgba(255, 255, 255, 0.8); 
     padding: 15px;
-    width: 80%; 
+    width: 75%; 
 }
 
 .hero article img {
@@ -172,4 +182,145 @@ footer p {
     margin: 0 auto 0 0; /* Left margin: auto, others 0 */
     text-align: center; /* Center the text */
     flex: 1; /* Allow paragraph to grow */
+}
+
+.employee-profiles {
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: center; /* Center the figures on desktop */
+}
+.employee-profiles img {
+    display: block; /* Remove any default inline spacing */
+    width: 100%; /* Make images responsive within their container */
+    height: auto;
+    border-radius: 5px; /* Optional: Add rounded corners */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    margin-bottom: 10px; /* Space below the image */
+}
+.hero-message {
+    position
+}
+.newsletter {
+    grid-column: 1 / -1; /* Full width */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.newsletter h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.newsletter form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.newsletter input[type="text"],
+.newsletter input[type="email"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 80%;
+    max-width: 300px;
+}
+
+.newsletter button {
+    background-color: var(--accent2-color);
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter button:hover {
+    background-color: #5e7a5b;
+}
+
+.call-to-action {
+    grid-column: 1 / -1; /* Full width */
+    background-color: var(--accent2-color);
+    color: white;
+    padding: 30px 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.call-to-action h2 {
+    margin-bottom: 15px;
+    font-size: 2em;
+}
+
+.call-to-action a {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.call-to-action a:hover {
+    background-color: #541614;
+}
+
+.site-info {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column for mobile */
+    grid-gap: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Add some space below */
+}
+
+.info-card {
+    text-align: center;
+}
+
+.info-card img {
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.info-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.info-card p {
+    color: var(--secondary-color);
+    line-height: 1.6;
+}
+@media (min-width: 768px) {
+    main {
+        grid-template-columns: 1fr 1fr; /* Two columns on desktop */
+    }
+
+    .hero {
+        grid-column: 1 / -1; /* Still full width */
+    }
+
+    .call-to-action {
+        grid-column: 1 / -1; /* Still full width */
+    }
+
+    .site-info {
+        grid-column: 1 / -1; /* Full width on desktop for this example */
+        grid-template-columns: repeat(2, 1fr); /* Two columns for info cards */
+    }
 }
